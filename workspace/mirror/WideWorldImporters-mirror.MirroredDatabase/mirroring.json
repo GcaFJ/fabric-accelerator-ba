@@ -3,7 +3,7 @@
     "source": {
       "type": "AzureSqlDatabase",
       "typeProperties": {
-        "connection": "a0a57e51-5032-4e46-b0f0-493c9d2f51c9",
+        "connection": "072d1b01-1c66-4c97-b02a-b4b2a67699b3",
         "landingZone": {
           "type": "MountedRelationalDatabase",
           "typeProperties": {}
