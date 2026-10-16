@@ -6,7 +6,7 @@ env:
   FABRIC_CAPACITY_SKU: F8
   FABRIC_CAPACITY_ADMIN_ID: f875e47f-b2d5-4bdd-9aa4-42ddfcc9176b
   RESOURCE_GROUP: rg-fdai-common
-  WORKSPACE_NAME: Fabric Accelerator - GitHub
+  WORKSPACE_NAME: 'Fabric Accelerator - GitHub'
   WORKSPACE_ADMIN_ID: c559fd10-2355-4862-b16e-33011bd01836
   WORKSPACE_ADMIN_TYPE: user # valid values: user, group
   FABRIC_SQL_DB_NAME: controldb-fabric-accelerator
