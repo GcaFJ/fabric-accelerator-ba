@@ -208,6 +208,14 @@ jobs:
             MirrorDBExists=$(fab exists $WORKSPACE_NAME.Workspace/WideWorldImporters-mirror.MirroredDatabase | tr -d '[:space:]')
           
             if [ "$MirrorDBExists" != "*true" ]; then
+                MIRROR_FILE="${GITHUB_WORKSPACE}/workspace/mirror/WideWorldImporters-mirror.MirroredDatabase/mirroring.json"
+
+                echo "=== mirroring.json ==="
+                jq '.' "$MIRROR_FILE"
+                
+                echo "=== GUIDs referenced by mirroring.json ==="
+                grep -Eo '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}' \
+                  "$MIRROR_FILE" | sort -u
                 mirroring=$(jq '.' "${GITHUB_WORKSPACE}/workspace/mirror/WideWorldImporters-mirror.MirroredDatabase/mirroring.json" | base64)
                 folderId=$(fab get $WORKSPACE_NAME.Workspace/mirror.Folder -q id | tr -d '\r')
                 jsonPayload=$(jq -n \
